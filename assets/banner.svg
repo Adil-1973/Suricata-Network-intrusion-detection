@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Suricata IDS project banner">
+<defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#0B1220"/><stop offset="1" stop-color="#17304B"/></linearGradient><linearGradient id="shield" x1="0" x2="1"><stop stop-color="#1DE1AF"/><stop offset="1" stop-color="#38BDF8"/></linearGradient></defs>
+<rect width="1200" height="300" fill="url(#bg)" rx="18"/>
+<g opacity=".18" stroke="#67E8F9" fill="none"><path d="M0 80H1200M0 150H1200M0 220H1200M80 0V300M240 0V300M400 0V300M560 0V300M720 0V300M880 0V300M1040 0V300"/><path d="M0 225L170 150L320 180L500 80L690 130L850 60L1000 115L1200 20" stroke-width="3"/></g>
+<path d="M139 45L227 83V148C227 207 191 246 139 269C87 246 51 207 51 148V83Z" fill="none" stroke="url(#shield)" stroke-width="8"/>
+<path d="M104 148L130 174L181 117" fill="none" stroke="#1DE1AF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="282" y="114" font-size="58" font-weight="800" fill="#FFFFFF" font-family="Arial, sans-serif">SURICATA IDS</text>
+<text x="285" y="164" font-size="27" fill="#C8D9E8" font-family="Arial, sans-serif">Network Intrusion Detection Lab</text>
+<rect x="283" y="198" width="160" height="38" rx="19" fill="#0C786E"/><text x="363" y="224" font-size="19" font-weight="700" fill="white" text-anchor="middle" font-family="Arial, sans-serif">SURICATA 8</text>
+<rect x="456" y="198" width="160" height="38" rx="19" fill="#185F89"/><text x="536" y="224" font-size="19" font-weight="700" fill="white" text-anchor="middle" font-family="Arial, sans-serif">NMAP + LINUX</text>
+</svg>
