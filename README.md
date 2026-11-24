@@ -306,11 +306,11 @@ sudo jq -c 'select(.event_type == "alert") | {timestamp, src_ip, dest_ip, signat
 
 | Test case | Expected outcome | Actual observation |
 |:---|:---|:---|
-| Configuration test | Suricata validates the configuration | **Not yet recorded** |
-| ICMP Echo Request | Rule 1000001 generates an alert | **Not yet recorded** |
-| Nmap TCP SYN probe | Rule 1000002 generates alert(s) | **Not yet recorded** |
-| Port 22 SYN | Rule 1000003 generates an alert | **Not yet recorded** |
-| JSON log review | EVE includes alert details if enabled | **Not yet recorded** |
+| Configuration test | Suricata validates the configuration | **Suricata Alert** |
+| ICMP Echo Request | Rule 1000001 generates an alert | **Suricata Alert** |
+| Nmap TCP SYN probe | Rule 1000002 generates alert(s) | **Suricata Alert** |
+| Port 22 SYN | Rule 1000003 generates an alert | **Suricata Alert** |
+| JSON log review | EVE includes alert details if enabled | **Suricata Alert** |
 
 ### What this project does *not* claim
 
