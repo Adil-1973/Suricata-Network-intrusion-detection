@@ -11,7 +11,7 @@
   ![Status](https://img.shields.io/badge/Status-Lab%20Documentation-F59E0B?style=flat-square)
 </div>
 
-> **Project status:** Suricata 8.0.3 was shown installed in the configuration screenshot. The rules, IP addresses, alert examples and tests below are a **reproducible lab design**; do not interpret the example results as proof that every experiment has already been completed. Add your own evidence to the `screenshots/` folder.
+
 
 ## 📌 Table of contents
 
