@@ -120,7 +120,7 @@ suricata --version
 ip -4 addr
 ```
 
-Assume, **for illustration only**, that the Ubuntu sensor is `192.168.56.20/24` and the host-only adapter is `enp0s8`.
+Assume, **for illustration only**, that the Ubuntu sensor is `192.168.56.108/24` and the host-only adapter is `enp0s8`.
 
 ### 3. Configure `HOME_NET`
 
@@ -181,7 +181,7 @@ alert tcp any any -> $HOME_NET 22 (msg:"LAB SSH Port 22 SYN Detected"; flags:S; 
 From **Kali**, send four ping requests to the Ubuntu target:
 
 ```bash
-ping -c 4 192.168.56.20
+ping -c 4 192.168.56.108
 ```
 
 Expected Suricata rule: **SID 1000001**. View alert output on Ubuntu:
@@ -197,7 +197,7 @@ sudo tail -f /var/log/suricata/fast.log
 From **Kali**, scan **only the Ubuntu VM you control**:
 
 ```bash
-sudo nmap -sS -Pn -p 1-100 192.168.56.20
+sudo nmap -sS -Pn -p 1-100 192.168.56.108
 ```
 
 Expected Suricata rule: **SID 1000002** (often multiple alerts). This establishes that SYN probes are visible. It does **not** implement rate-based scan classification.
@@ -207,7 +207,7 @@ Expected Suricata rule: **SID 1000002** (often multiple alerts). This establishe
 From **Kali**, generate a TCP connection attempt toward port 22:
 
 ```bash
-nc -vz -w 2 192.168.56.20 22
+nc -vz -w 2 192.168.56.108 22
 ```
 
 Expected Suricata rules: **SID 1000002 and SID 1000003** may both alert on the same SYN packet. An alert can occur even when no SSH server is listening.
@@ -273,8 +273,6 @@ Monitor the alerts:
 sudo tail -f /var/log/suricata/fast.log
 ```
 
-Filter JSON alerts (if `jq` is installed and EVE alert logging is enabled):
-
 ```bash
 sudo jq -c 'select(.event_type == "alert") | {timestamp, src_ip, dest_ip, signature_id: .alert.signature_id, signature: .alert.signature}' /var/log/suricata/eve.json
 ```
@@ -293,24 +291,16 @@ sudo jq -c 'select(.event_type == "alert") | {timestamp, src_ip, dest_ip, signat
 
 ## 📸 Screenshots and evidence
 
-> Screenshots are **not included yet**, because actual output from your system has not been supplied. Replace the placeholders below only after saving your screenshots with these filenames.
-
 | Evidence | Suggested screenshot name | Status |
 |:---|:---|:---|
-| Installed Suricata version | `suricata-version.png` | ⬜ To add |
-| Correct HOME_NET setting | `home-net.png` | ⬜ To add |
-| Suricata configuration test | `configuration-test.png` | ⬜ To add |
-| ICMP test and resulting alert | `icmp-alert.png` | ⬜ To add |
-| Nmap SYN test and resulting alert | `nmap-alert.png` | ⬜ To add |
-| SSH attempt and alert | `ssh-alert.png` | ⬜ To add |
-| Reviewed EVE JSON alert | `eve-json.png` | ⬜ To add |
+| Installed Suricata version | `suricata-version.png` 
+| Correct HOME_NET setting | `home-net.png` 
+| Suricata configuration test | `configuration-test.png` 
+| ICMP test and resulting alert | `icmp-alert.png` 
+| Nmap SYN test and resulting alert | `nmap-alert.png`
+| SSH attempt and alert | `ssh-alert.png` 
+| Reviewed EVE JSON alert | `eve-json.png`
 
-After uploading your screenshots, you can display them like this:
-
-```markdown
-![Suricata ICMP alert](screenshots/icmp-alert.png)
-![Suricata TCP SYN alert](screenshots/nmap-alert.png)
-```
 
 ## ✅ Results and limitations
 
