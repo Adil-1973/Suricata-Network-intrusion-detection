@@ -11,7 +11,7 @@
   ![Status](https://img.shields.io/badge/Status-Lab%20Documentation-F59E0B?style=flat-square)
 </div>
 
-> **Project status:** Suricata 8.0.3 was shown installed in the configuration screenshot. The rules, IP addresses, alert examples and tests below are a **reproducible lab design**; do not interpret the example results as proof that every experiment has already been completed. Add your own evidence to the `screenshots/` folder.
+
 
 ## 📌 Table of contents
 
@@ -289,38 +289,16 @@ sudo jq -c 'select(.event_type == "alert") | {timestamp, src_ip, dest_ip, signat
   "signature_id": 1000001,
   "signature": "LAB ICMP Echo Request Detected"
 }
-```
-
-## 📸 Screenshots and evidence
-
-> Screenshots are **not included yet**, because actual output from your system has not been supplied. Replace the placeholders below only after saving your screenshots with these filenames.
-
-| Evidence | Suggested screenshot name | Status |
-|:---|:---|:---|
-| Installed Suricata version | `suricata-version.png` | ⬜ To add |
-| Correct HOME_NET setting | `home-net.png` | ⬜ To add |
-| Suricata configuration test | `configuration-test.png` | ⬜ To add |
-| ICMP test and resulting alert | `icmp-alert.png` | ⬜ To add |
-| Nmap SYN test and resulting alert | `nmap-alert.png` | ⬜ To add |
-| SSH attempt and alert | `ssh-alert.png` | ⬜ To add |
-| Reviewed EVE JSON alert | `eve-json.png` | ⬜ To add |
-
-After uploading your screenshots, you can display them like this:
-
-```markdown
-![Suricata ICMP alert](screenshots/icmp-alert.png)
-![Suricata TCP SYN alert](screenshots/nmap-alert.png)
-```
 
 ## ✅ Results and limitations
 
 | Test case | Expected outcome | Actual observation |
 |:---|:---|:---|
-| Configuration test | Suricata validates the configuration | **Not yet recorded** |
-| ICMP Echo Request | Rule 1000001 generates an alert | **Not yet recorded** |
-| Nmap TCP SYN probe | Rule 1000002 generates alert(s) | **Not yet recorded** |
-| Port 22 SYN | Rule 1000003 generates an alert | **Not yet recorded** |
-| JSON log review | EVE includes alert details if enabled | **Not yet recorded** |
+| Configuration test | Suricata validates the configuration | **Alert on suricata fast log file** |
+| ICMP Echo Request | Rule 1000001 generates an alert | **Alert on suricata fast log file** |
+| Nmap TCP SYN probe | Rule 1000002 generates alert(s) | **Alert on suricata fast log file** |
+| Port 22 SYN | Rule 1000003 generates an alert | **Alert on suricata fast log file** |
+| JSON log review | EVE includes alert details if enabled | **Alert on suricata fast log file** |
 
 ### What this project does *not* claim
 
