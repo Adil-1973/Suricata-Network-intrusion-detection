@@ -1,0 +1,10 @@
+# No live captures, private logs, sensitive credentials or local configuration
+*.pcap
+*.pcapng
+*.log
+eve.json
+.env
+*.key
+*.pem
+*.swp
+*~
